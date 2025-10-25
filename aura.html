@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codéon - Faites parler vos données</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #10b981;
+            white-space: nowrap;
+            animation: typing 4s steps(200, end), blink 0.75s step-end infinite;
+            display: inline-block;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #10b981; }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 antialiased">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/50 backdrop-blur-xl bg-zinc-950/80">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-semibold tracking-tight">
+                        <span class="text-blue-500">Code</span><span class="text-zinc-100">on</span>
+                    </a>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#raison" class="text-sm text-zinc-400 hover:text-zinc-100 transition-colors">Raison d'être</a>
+                    <a href="#services" class="text-sm text-zinc-400 hover:text-zinc-100 transition-colors">Services</a>
+                    <a href="#realisations" class="text-sm text-zinc-400 hover:text-zinc-100 transition-colors">Réalisations</a>
+                    <a href="#contact" class="text-sm text-zinc-400 hover:text-zinc-100 transition-colors">Contact</a>
+                </nav>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-zinc-100">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800/50 bg-zinc-950/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#raison" class="block text-sm text-zinc-400 hover:text-zinc-100 transition-colors">Raison d'être</a>
+                <a href="#services" class="block text-sm text-zinc-400 hover:text-zinc-100 transition-colors">Services</a>
+                <a href="#realisations" class="block text-sm text-zinc-400 hover:text-zinc-100 transition-colors">Réalisations</a>
+                <a href="#contact" class="block text-sm text-zinc-400 hover:text-zinc-100 transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="hidden fixed bottom-8 right-8 z-40 bg-blue-600 hover:bg-blue-500 text-white p-3 rounded-full shadow-lg transition-all duration-300">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- Section 1: Raison d'être -->
+<section id="raison" class="h-screen flex items-center justify-center relative overflow-hidden snap-start">
+  <!-- Image de fond -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
+         alt="Data visualization"
+         class="w-full h-full object-cover opacity-25" />
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-zinc-950/95 to-zinc-950/90"></div>
+  </div>
+
+  <!-- Contenu texte -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
+    <h1 class="text-5xl md:text-7xl font-semibold tracking-tight mb-8 text-zinc-100">
+      Faites parler vos <span class="text-blue-500">données</span>.
+    </h1>
+
+    <p class="text-lg md:text-xl text-zinc-300 leading-relaxed max-w-3xl mx-auto whitespace-normal break-words">
+      Codéon est une startup française née de la rencontre de deux ingénieurs convaincus que la technologie doit libérer, pas contraindre. 
+      Nous concevons des solutions intelligentes et accessibles pour automatiser le traitement de vos données. 
+      Moins de tâches répétitives, plus de valeur ajoutée.
+    </p>
+
+    <div class="mt-12">
+      <a href="#services"
+         class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+        Découvrir nos services
+        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <i data-lucide="chevron-down" class="w-6 h-6 text-zinc-500"></i>
+  </div>
+</section>
+
+
+    <!-- Section 2: Services -->
+    <section id="services" class="min-h-screen flex flex-col justify-center py-20 border-t border-zinc-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Nos Services</h2>
+                <p class="text-lg text-zinc-400 max-w-2xl mx-auto">Des solutions sur mesure pour transformer vos données en valeur</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                <!-- Card 1 -->
+                <div class="group bg-zinc-900/50 border border-zinc-800/50 rounded-xl p-8 hover:border-blue-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="database" class="w-6 h-6 text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-zinc-100">Ingestion & Structuration</h3>
+                    <p class="text-zinc-400 leading-relaxed">Collectez, nettoyez et structurez vos données provenant de sources multiples pour une exploitation optimale.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="group bg-zinc-900/50 border border-zinc-800/50 rounded-xl p-8 hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-emerald-600/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-6 h-6 text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-zinc-100">Automatisation & Scripts</h3>
+                    <p class="text-zinc-400 leading-relaxed">Éliminez les tâches répétitives avec des scripts intelligents et des workflows automatisés sur mesure.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="group bg-zinc-900/50 border border-zinc-800/50 rounded-xl p-8 hover:border-blue-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6 text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-zinc-100">Data-Viz & Apps</h3>
+                    <p class="text-zinc-400 leading-relaxed">Visualisez vos données avec des dashboards intuitifs et des applications web personnalisées.</p>
+                </div>
+            </div>
+            
+            <!-- Technologies Marquee -->
+            <div class="relative overflow-hidden bg-zinc-900/30 border-y border-zinc-800/50 py-8">
+                <div class="flex items-center gap-12 animate-marquee">
+                    <div class="flex items-center gap-12 min-w-max">
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="code-2" class="w-6 h-6 text-blue-500"></i>
+                            <span class="text-lg font-medium text-zinc-300">Python</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="bar-chart-2" class="w-6 h-6 text-emerald-400"></i>
+                            <span class="text-lg font-medium text-zinc-300">Power BI</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="map" class="w-6 h-6 text-blue-500"></i>
+                            <span class="text-lg font-medium text-zinc-300">QGIS</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="table-2" class="w-6 h-6 text-emerald-400"></i>
+                            <span class="text-lg font-medium text-zinc-300">Excel</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="file-text" class="w-6 h-6 text-blue-500"></i>
+                            <span class="text-lg font-medium text-zinc-300">PDF</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="braces" class="w-6 h-6 text-emerald-400"></i>
+                            <span class="text-lg font-medium text-zinc-300">JSON</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="database" class="w-6 h-6 text-blue-500"></i>
+                            <span class="text-lg font-medium text-zinc-300">SQL</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="cloud" class="w-6 h-6 text-emerald-400"></i>
+                            <span class="text-lg font-medium text-zinc-300">API REST</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-12 min-w-max">
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="code-2" class="w-6 h-6 text-blue-500"></i>
+                            <span class="text-lg font-medium text-zinc-300">Python</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="bar-chart-2" class="w-6 h-6 text-emerald-400"></i>
+                            <span class="text-lg font-medium text-zinc-300">Power BI</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="map" class="w-6 h-6 text-blue-500"></i>
+                            <span class="text-lg font-medium text-zinc-300">QGIS</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="table-2" class="w-6 h-6 text-emerald-400"></i>
+                            <span class="text-lg font-medium text-zinc-300">Excel</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="file-text" class="w-6 h-6 text-blue-500"></i>
+                            <span class="text-lg font-medium text-zinc-300">PDF</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="braces" class="w-6 h-6 text-emerald-400"></i>
+                            <span class="text-lg font-medium text-zinc-300">JSON</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="database" class="w-6 h-6 text-blue-500"></i>
+                            <span class="text-lg font-medium text-zinc-300">SQL</span>
+                        </div>
+                        <div class="flex items-center gap-3 px-6">
+                            <i data-lucide="cloud" class="w-6 h-6 text-emerald-400"></i>
+                            <span class="text-lg font-medium text-zinc-300">API REST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Réalisations -->
+    <section id="realisations" class="min-h-screen flex flex-col justify-center py-20 border-t border-zinc-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Nos Réalisations</h2>
+                <p class="text-lg text-zinc-400 max-w-2xl mx-auto">Des projets qui illustrent notre expertise</p>
+            </div>
+            
+            <div class="relative">
+                <div id="slider" class="overflow-hidden">
+                    <div id="slider-track" class="flex transition-transform duration-500 ease-out">
+                        <!-- Project 1 -->
+                        <div class="min-w-full">
+                            <div class="bg-zinc-900/50 border border-zinc-800/50 rounded-xl overflow-hidden">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    <div class="relative h-64 md:h-auto">
+                                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Dashboard" class="w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-zinc-950/50 to-transparent"></div>
+                                    </div>
+                                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                                        <div class="inline-flex items-center gap-2 bg-blue-600/10 text-blue-400 text-xs font-medium px-3 py-1 rounded-full w-fit mb-4">
+                                            <i data-lucide="sparkles" class="w-3 h-3"></i>
+                                            Data Visualization
+                                        </div>
+                                        <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-zinc-100">Dashboard Analytics Temps Réel</h3>
+                                        <p class="text-zinc-400 leading-relaxed mb-6">Conception d'un tableau de bord interactif permettant le suivi en temps réel de KPIs critiques pour une entreprise industrielle. Intégration de multiples sources de données avec mise à jour automatique.</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">Python</span>
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">Power BI</span>
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">SQL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 2 -->
+                        <div class="min-w-full">
+                            <div class="bg-zinc-900/50 border border-zinc-800/50 rounded-xl overflow-hidden">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    <div class="relative h-64 md:h-auto">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Automation" class="w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-zinc-950/50 to-transparent"></div>
+                                    </div>
+                                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                                        <div class="inline-flex items-center gap-2 bg-emerald-600/10 text-emerald-400 text-xs font-medium px-3 py-1 rounded-full w-fit mb-4">
+                                            <i data-lucide="zap" class="w-3 h-3"></i>
+                                            Automatisation
+                                        </div>
+                                        <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-zinc-100">Extraction Automatisée de Documents</h3>
+                                        <p class="text-zinc-400 leading-relaxed mb-6">Développement d'un système d'extraction et de traitement automatique de données depuis des milliers de PDF et fichiers Excel. Réduction du temps de traitement de 95% avec une précision de 99.7%.</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">Python</span>
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">OCR</span>
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">API</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 3 -->
+                        <div class="min-w-full">
+                            <div class="bg-zinc-900/50 border border-zinc-800/50 rounded-xl overflow-hidden">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    <div class="relative h-64 md:h-auto">
+                                        <img src="https://images.unsplash.com/photo-1569428034239-f9565e32e224?w=800&q=80" alt="Mapping" class="w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-zinc-950/50 to-transparent"></div>
+                                    </div>
+                                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                                        <div class="inline-flex items-center gap-2 bg-blue-600/10 text-blue-400 text-xs font-medium px-3 py-1 rounded-full w-fit mb-4">
+                                            <i data-lucide="map" class="w-3 h-3"></i>
+                                            Cartographie
+                                        </div>
+                                        <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-zinc-100">Plateforme de Géolocalisation</h3>
+                                        <p class="text-zinc-400 leading-relaxed mb-6">Création d'une application web de cartographie interactive pour la visualisation et l'analyse de données territoriales. Interface intuitive avec filtres avancés et export des résultats.</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">QGIS</span>
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">JavaScript</span>
+                                            <span class="text-xs bg-zinc-800/50 text-zinc-300 px-3 py-1 rounded-full">PostGIS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slider Controls -->
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button id="prev-btn" class="bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 text-zinc-300 p-2 rounded-lg transition-colors">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <div class="flex gap-2">
+                        <button class="slider-dot w-2 h-2 rounded-full bg-blue-500 transition-all"></button>
+                        <button class="slider-dot w-2 h-2 rounded-full bg-zinc-700 transition-all"></button>
+                        <button class="slider-dot w-2 h-2 rounded-full bg-zinc-700 transition-all"></button>
+                    </div>
+                    <button id="next-btn" class="bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 text-zinc-300 p-2 rounded-lg transition-colors">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Contact -->
+    <section id="contact" class="min-h-screen flex flex-col justify-center py-20 border-t border-zinc-800/50">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Contactez-nous</h2>
+                <p class="text-lg text-zinc-400 max-w-2xl mx-auto">Prêt à transformer vos données en valeur ? Parlons de votre projet.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-blue-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-zinc-100 mb-1">Email</h3>
+                            <a href="mailto:contact@codeon.fr" class="text-zinc-400 hover:text-blue-400 transition-colors">contact@codeon.fr</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-emerald-600/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-zinc-100 mb-1">Localisation</h3>
+                            <p class="text-zinc-400">France</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="contact-form" class="bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-8">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-zinc-300 mb-2">Nom complet</label>
+                        <input type="text" id="name" name="name" required class="w-full bg-zinc-900/50 border border-zinc-700/50 rounded-lg px-4 py-3 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all" placeholder="Jean Dupont">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-zinc-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-zinc-900/50 border border-zinc-700/50 rounded-lg px-4 py-3 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all" placeholder="jean@entreprise.fr">
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="subject" class="block text-sm font-medium text-zinc-300 mb-2">Sujet</label>
+                    <input type="text" id="subject" name="subject" required class="w-full bg-zinc-900/50 border border-zinc-700/50 rounded-lg px-4 py-3 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all" placeholder="Demande de devis">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-zinc-300 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="6" required class="w-full bg-zinc-900/50 border border-zinc-700/50 rounded-lg px-4 py-3 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all resize-none" placeholder="Décrivez votre projet..."></textarea>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="files" class="block text-sm font-medium text-zinc-300 mb-2">Fichiers joints (optionnel)</label>
+                    <div class="relative">
+                        <input type="file" id="files" name="files" multiple class="hidden">
+                        <label for="files" class="flex items-center justify-center gap-2 w-full bg-zinc-900/50 border border-zinc-700/50 border-dashed rounded-lg px-4 py-8 text-zinc-400 hover:text-zinc-300 hover:border-zinc-600 cursor-pointer transition-all">
+                            <i data-lucide="upload" class="w-5 h-5"></i>
+                            <span class="text-sm">Cliquez pour ajouter des fichiers</span>
+                        </label>
+                    </div>
+                    <p class="text-xs text-zinc-500 mt-2">PDF, Excel, images acceptés (max 10 Mo par fichier)</p>
+                </div>
+                
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+                    <span>Envoyer le message</span>
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800/50 py-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-zinc-500">© 2024 Codéon. Tous droits réservés.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Mentions légales</a>
+                    <a href="#" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons({
+            strokeWidth: 1.5
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.remove('hidden');
+            } else {
+                scrollTopBtn.classList.add('hidden');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Slider functionality
+        let currentSlide = 0;
+        const sliderTrack = document.getElementById('slider-track');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.querySelectorAll('.slider-dot');
+        const totalSlides = 3;
+
+        function updateSlider() {
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.remove('bg-zinc-700');
+                    dot.classList.add('bg-blue-500');
+                } else {
+                    dot.classList.remove('bg-blue-500');
+                    dot.classList.add('bg-zinc-700');
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+            });
+        });
+
+        // Auto-advance slider
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }, 8000);
+
+        // Form submission with mailto
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoLink = `mailto:contact@codeon.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            
+            window.location.href = mailtoLink;
+        });
+
+        // File upload display
+        const fileInput = document.getElementById('files');
+        fileInput.addEventListener('change', (e) => {
+            const files = e.target.files;
+            if (files.length > 0) {
+                const fileNames = Array.from(files).map(f => f.name).join(', ');
+                const label = document.querySelector('label[for="files"]');
+                label.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5"></i><span class="text-sm">${files.length} fichier(s) sélectionné(s)</span>`;
+                lucide.createIcons({ strokeWidth: 1.5 });
+            }
+        });
+    </script>
+</body>
+</html>
