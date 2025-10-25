@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Codéon — Faites parler vos données</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAV FIXE -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="logo.png" alt="Logo Codéon" class="logo">
+        <span class="brand-name">Codéon</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#raison">Raison d’être</a>
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#contact">Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="snap-container">
+    <!-- SECTION 1 : HERO / RAISON D’ÊTRE -->
+    <section id="raison" class="panel hero">
+      <div class="hero-bg">
+        <!-- Remplace par ton image de dev (1920x1080 recommandé) -->
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1920&auto=format&fit=crop" alt="Développement" />
+        <div class="hero-gradient"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="headline">Faites parler vos données.</h1>
+        <p class="typewriter" data-text="
+Codéon est startup française née de la rencontre de deux ingénieurs convaincus d’une chose : la technologie doit libérer, pas contraindre.
+Fort de nos expériences en ingénierie, nous avons constaté que trop d’entreprises gaspillent encore un temps précieux à traiter leurs données manuellement.
+Notre conviction est simple : la machine doit servir l’humain, et non l’inverse.
+Chez Codéon, nous concevons des solutions intelligentes et accessibles pour automatiser le traitement de vos données et révéler tout leur potentiel.
+Moins de tâches répétitives, plus de valeur ajoutée.">
+          <!-- Le texte s’écrit automatiquement -->
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : SERVICES -->
+    <section id="services" class="panel services">
+      <div class="section-inner">
+        <h2>Services sur mesure, de bout en bout</h2>
+        <p class="lead">
+          Codéon intervient sur l’ensemble de la chaîne de valeur de la donnée — ou sur un maillon unique — selon vos besoins.
+        </p>
+
+        <!-- Cartes synthétiques -->
+        <div class="cards">
+          <article class="card">
+            <h3>Ingestion & Structuration</h3>
+            <p>Réception, nettoyage, normalisation et modélisation de données. Conception de bases adaptées à vos usages.</p>
+          </article>
+          <article class="card">
+            <h3>Automatisation & Scripts</h3>
+            <p>Suppression des tâches répétitives via pipelines robustes. Planifications, alertes, exports multi-formats.</p>
+          </article>
+          <article class="card">
+            <h3>Data-Viz & Apps</h3>
+            <p>Dashboards interactifs et applications métiers pour piloter vos opérations et accélérer vos décisions.</p>
+          </article>
+        </div>
+
+        <!-- Marquee logos (défilement continu) -->
+        <div class="marquee">
+          <div class="track">
+            <img src="https://cdn.simpleicons.org/python" alt="Python">
+            <img src="https://cdn.simpleicons.org/powerbi" alt="Power BI">
+            <img src="https://cdn.simpleicons.org/qgis" alt="QGIS">
+            <span class="badge">.exe</span>
+            <img src="https://cdn.simpleicons.org/microsoftexcel" alt="Excel">
+            <img src="https://cdn.simpleicons.org/microsoftpowerpoint" alt="PowerPoint">
+            <img src="https://cdn.simpleicons.org/adobeacrobatreader" alt="PDF">
+            <span class="badge">.txt</span>
+            <img src="https://cdn.simpleicons.org/microsoftword" alt="Word">
+            <span class="badge">.json</span>
+
+            <!-- duplication pour boucle fluide -->
+            <img src="https://cdn.simpleicons.org/python" alt="Python">
+            <img src="https://cdn.simpleicons.org/powerbi" alt="Power BI">
+            <img src="https://cdn.simpleicons.org/qgis" alt="QGIS">
+            <span class="badge">.exe</span>
+            <img src="https://cdn.simpleicons.org/microsoftexcel" alt="Excel">
+            <img src="https://cdn.simpleicons.org/microsoftpowerpoint" alt="PowerPoint">
+            <img src="https://cdn.simpleicons.org/adobeacrobatreader" alt="PDF">
+            <span class="badge">.txt</span>
+            <img src="https://cdn.simpleicons.org/microsoftword" alt="Word">
+            <span class="badge">.json</span>
+          </div>
+        </div>
+
+        <p class="cta-text">
+          Vous vous sentez concernés par les sujets data ? 
+          <a href="#contact" class="cta-link">Contactez-nous</a> et nous réaliserons votre devis.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 3 : RÉALISATIONS (slider horizontal) -->
+    <section id="realisations" class="panel works">
+      <div class="section-inner">
+        <h2>Réalisations</h2>
+        <div class="slider-controls">
+          <button class="prev" aria-label="Précédent">‹</button>
+          <button class="next" aria-label="Suivant">›</button>
+        </div>
+        <div class="slider" id="worksSlider">
+          <!-- Slide 1 -->
+          <article class="work-card">
+            <img src="https://images.unsplash.com/photo-1534759846116-57968a6a17f4?q=80&w=1200&auto=format&fit=crop" alt="Projet Hydro">
+            <div class="work-meta">
+              <h3>Projet Hydro</h3>
+              <p>Pipeline de collecte + modèle de prévision pour optimiser les opérations et la maintenance.</p>
+            </div>
+          </article>
+          <!-- Slide 2 -->
+          <article class="work-card">
+            <img src="https://images.unsplash.com/photo-1581091014534-8987c1d647d5?q=80&w=1200&auto=format&fit=crop" alt="Projet Énergie">
+            <div class="work-meta">
+              <h3>Projet Énergie</h3>
+              <p>Thermosensibilité et dashboards temps réel pour suivre consommation et écarts réseau.</p>
+            </div>
+          </article>
+          <!-- Slide 3 -->
+          <article class="work-card">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="Commune">
+            <div class="work-meta">
+              <h3>Commune</h3>
+              <p>Observatoire open data — cartographies QGIS + rapports automatisés multi-formats.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 : CONTACT -->
+    <section id="contact" class="panel contact">
+      <div class="section-inner">
+        <h2>Contact</h2>
+        <form id="contactForm" class="contact-form">
+          <div class="grid">
+            <label>Nom
+              <input type="text" name="name" required>
+            </label>
+            <label>Email
+              <input type="email" name="email" required>
+            </label>
+          </div>
+          <label>Objet
+            <input type="text" name="subject" placeholder="Demande de devis / info…" required>
+          </label>
+          <label>Message
+            <textarea name="message" rows="4" placeholder="Décrivez votre problématique…" required></textarea>
+          </label>
+          <label>Pièces jointes
+            <input type="file" name="files" multiple>
+          </label>
+          <button type="submit" class="btn-primary">Envoyer</button>
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+        <p class="foot-note">Ou écrivez-nous : <a href="mailto:contact@codeon.fr">contact@codeon.fr</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bouton retour haut -->
+  <button id="backToTop" title="Haut">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
