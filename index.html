@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<!-- Déclaration du language, rendu accessible sur mobile, titres de l'onglet dans le navigateur etc -->
+
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -7,8 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 </head>
+
+
+
 <body>
+
+
+
 
   <!-- NAV FIXE -->
   <header class="navbar">
@@ -31,7 +41,7 @@
     <section id="raison" class="panel hero">
       <div class="hero-bg">
         <!-- Remplace par ton image de dev (1920x1080 recommandé) -->
-        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1920&auto=format&fit=crop" alt="Développement" />
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80" alt="Data" />
         <div class="hero-gradient"></div>
       </div>
       <div class="hero-content">
@@ -47,29 +57,89 @@ Moins de tâches répétitives, plus de valeur ajoutée.">
       </div>
     </section>
 
+
+
+
+
+
     <!-- SECTION 2 : SERVICES -->
     <section id="services" class="panel services">
       <div class="section-inner">
-        <h2>Services sur mesure, de bout en bout</h2>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+  Services sur mesure, de bout en bout
+</h2>
         <p class="lead">
-          Codéon intervient sur l’ensemble de la chaîne de valeur de la donnée — ou sur un maillon unique — selon vos besoins.
+          Codéon intervient sur l’ensemble de la chaîne de valeur de la donnée ou sur un maillon unique mais toujours selon vos besoins.
         </p>
 
-        <!-- Cartes synthétiques -->
-        <div class="cards">
-          <article class="card">
-            <h3>Ingestion & Structuration</h3>
-            <p>Réception, nettoyage, normalisation et modélisation de données. Conception de bases adaptées à vos usages.</p>
-          </article>
-          <article class="card">
-            <h3>Automatisation & Scripts</h3>
-            <p>Suppression des tâches répétitives via pipelines robustes. Planifications, alertes, exports multi-formats.</p>
-          </article>
-          <article class="card">
-            <h3>Data-Viz & Apps</h3>
-            <p>Dashboards interactifs et applications métiers pour piloter vos opérations et accélérer vos décisions.</p>
-          </article>
+
+
+<div class="flex flex-col lg:flex-row items-stretch justify-between gap-8 mb-20 relative">
+
+    <!-- Bloc 1 -->
+    <div class="flex-1 group bg-zinc-900/60 border border-zinc-800/60 rounded-xl p-8 hover:border-blue-500/70 transition-all duration-300 backdrop-blur-sm">
+        <div class="w-14 h-14 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="grid" class="w-7 h-7 text-blue-400"></i>
         </div>
+        <h3 class="text-2xl font-bold mb-3 text-zinc-100">1. Collecte & Structuration</h3>
+        <p class="text-zinc-300 leading-relaxed mb-6">
+            Nous consolidons vos sources hétérogènes. Cette étape cruciale garantit la propreté, la fiabilité et l'organisation logique des données.
+        </p>
+
+        <div class="bg-zinc-800/40 border-l-4 border-blue-500 p-4 rounded-md">
+            <p class="text-blue-300 font-medium">Bénéfice Clé :</p>
+            <p class="text-zinc-200 text-sm">Uniformisation et préparation à l’analyse.</p>
+        </div>
+    </div>
+
+    <!-- Flèche -->
+    <div class="hidden lg:flex justify-center items-center">
+        <i data-lucide="arrow-right-circle" class="w-10 h-10 text-zinc-500"></i>
+    </div>
+
+    <!-- Bloc 2 -->
+    <div class="flex-1 group bg-zinc-900/60 border border-zinc-800/60 rounded-xl p-8 hover:border-emerald-500/70 transition-all duration-300 backdrop-blur-sm">
+        <div class="w-14 h-14 bg-emerald-600/20 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="cpu" class="w-7 h-7 text-emerald-400"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-zinc-100">2. Automatisation & Analyse</h3>
+        <p class="text-zinc-300 leading-relaxed mb-6">
+            Développement de scripts, algorithmes et pipelines robustes pour automatiser l’analyse et accélérer vos workflows.
+        </p>
+
+        <div class="bg-zinc-800/40 border-l-4 border-emerald-500 p-4 rounded-md">
+            <p class="text-emerald-300 font-medium">Bénéfice Clé :</p>
+            <p class="text-zinc-200 text-sm">Gains de temps & productivité.</p>
+        </div>
+    </div>
+
+    <!-- Flèche -->
+    <div class="hidden lg:flex justify-center items-center">
+        <i data-lucide="arrow-right-circle" class="w-10 h-10 text-zinc-500"></i>
+    </div>
+
+    <!-- Bloc 3 -->
+    <div class="flex-1 group bg-zinc-900/60 border border-zinc-800/60 rounded-xl p-8 hover:border-purple-500/70 transition-all duration-300 backdrop-blur-sm">
+        <div class="w-14 h-14 bg-purple-600/20 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="layout-dashboard" class="w-7 h-7 text-purple-400"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-zinc-100">3. Visualisation & Décision</h3>
+        <p class="text-zinc-300 leading-relaxed mb-6">
+            Tableaux de bord, rapports, interfaces claires. Obtenez les informations utiles immédiatement.
+        </p>
+
+        <div class="bg-zinc-800/40 border-l-4 border-purple-500 p-4 rounded-md">
+            <p class="text-purple-300 font-medium">Bénéfice Clé :</p>
+            <p class="text-zinc-200 text-sm">Décision rapide & factuelle.</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
 
         <!-- Marquee logos (défilement continu) -->
         <div class="marquee">
@@ -109,7 +179,9 @@ Moins de tâches répétitives, plus de valeur ajoutée.">
     <!-- SECTION 3 : RÉALISATIONS (slider horizontal) -->
     <section id="realisations" class="panel works">
       <div class="section-inner">
-        <h2>Réalisations</h2>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+  Réalisations
+</h2>
         <div class="slider-controls">
           <button class="prev" aria-label="Précédent">‹</button>
           <button class="next" aria-label="Suivant">›</button>
@@ -119,18 +191,18 @@ Moins de tâches répétitives, plus de valeur ajoutée.">
           <article class="work-card">
             <img src="https://images.unsplash.com/photo-1534759846116-57968a6a17f4?q=80&w=1200&auto=format&fit=crop" alt="Projet Hydro">
             <div class="work-meta">
-              <h3>Projet Hydro</h3>
-              <p>Pipeline de collecte + modèle de prévision pour optimiser les opérations et la maintenance.</p>
+              <h3>Dashboard analytique en temps réel</h3>
+              <p>Création d'une application web Dash (Python) pour visualiser en direct les données de production d'une usine.</p>
             </div>
           </article>
           <!-- Slide 2 -->
-          <article class="work-card">
-            <img src="https://images.unsplash.com/photo-1581091014534-8987c1d647d5?q=80&w=1200&auto=format&fit=crop" alt="Projet Énergie">
-            <div class="work-meta">
-              <h3>Projet Énergie</h3>
-              <p>Thermosensibilité et dashboards temps réel pour suivre consommation et écarts réseau.</p>
-            </div>
-          </article>
+        <article class="work-card">
+          <div id="plot3d-demo"></div>
+          <div class="work-meta">
+            <h3>Modélisation 3D</h3>
+            <p>Part de la consommation d'électricité sensible à la température extérieure pour plusieurs milliers de clients</p>
+          </div>
+        </article>  
           <!-- Slide 3 -->
           <article class="work-card">
             <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="Commune">
@@ -168,14 +240,21 @@ Moins de tâches répétitives, plus de valeur ajoutée.">
           <button type="submit" class="btn-primary">Envoyer</button>
           <p id="formStatus" class="form-status" aria-live="polite"></p>
         </form>
-        <p class="foot-note">Ou écrivez-nous : <a href="mailto:contact@codeon.fr">contact@codeon.fr</a></p>
+        <p class="foot-note">Ou écrivez-nous : <a href="mailto:codeon-services@outlook.com">codeon-services@outlook.com</a></p>
       </div>
     </section>
   </main>
+
+
+
 
   <!-- Bouton retour haut -->
   <button id="backToTop" title="Haut">↑</button>
 
   <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
 </body>
 </html>

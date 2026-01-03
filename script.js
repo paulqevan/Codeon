@@ -28,22 +28,28 @@ document.querySelectorAll('.nav-links a').forEach(a=>{
 });
 
 /* Effet machine à écrire pour la raison d’être */
+/* Effet LLM : affichage par blocs */
 const tw = document.querySelector('.typewriter');
-if (tw){
+
+if (tw) {
   const text = tw.getAttribute('data-text').trim();
   tw.textContent = '';
-  let i=0;
-  const speed = 16; // ms par caractère
-  function type(){
-    if (i < text.length){
-      tw.textContent += text[i];
-      i++;
-      requestAnimationFrame(type);
+
+  let i = 0;
+  const speed = 20;     // vitesse (ms)
+  const blockSize = 4;  // nb caractères ajoutés par "batch"
+
+  function typeLLM() {
+    if (i < text.length) {
+      tw.textContent += text.slice(i, i + blockSize);
+      i += blockSize;
+      setTimeout(typeLLM, speed);
     }
   }
-  // petit délai pour laisser charger la police
-  setTimeout(type, 400);
+
+  setTimeout(typeLLM, 300);
 }
+
 
 /* Slider Réalisations (façon Tesla) */
 const slider = document.getElementById('worksSlider');
@@ -99,3 +105,44 @@ form.addEventListener('submit', async (e)=>{
     statusEl.textContent = 'Erreur réseau. Réessaie plus tard.';
   }
 });
+
+/* === Plotly 3D demo dans la section Réalisations === */
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('plot3d-demo');
+  if (!container || typeof Plotly === 'undefined') return;
+
+  // Données d'exemple (tu remplaceras par les tiennes)
+  const data = [{
+    type: 'scatter3d',
+    mode: 'markers',
+    x: [0, 1, 2, 3, 4, 5, 6],
+    y: [10, 15, 13, 17, 14, 18, 20],
+    z: [5, 6, 7, 8, 7, 9, 11],
+    marker: {
+      size: 5,
+      color: [5, 6, 7, 8, 7, 9, 11],
+      colorscale: 'Viridis',
+      opacity: 0.8
+    }
+  }];
+
+  const layout = {
+    title: 'Graphique 3D interactif',
+    margin: { l: 0, r: 0, b: 0, t: 40 },
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)',
+    scene: {
+      xaxis: { title: 'X', gridcolor: '#333', zerolinecolor: '#444', color: '#ddd' },
+      yaxis: { title: 'Y', gridcolor: '#333', zerolinecolor: '#444', color: '#ddd' },
+      zaxis: { title: 'Z', gridcolor: '#333', zerolinecolor: '#444', color: '#ddd' }
+    }
+  };
+
+  const config = {
+    responsive: true,
+    displaylogo: false
+  };
+
+  Plotly.newPlot(container, data, layout, config);
+});
+
